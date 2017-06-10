@@ -1,0 +1,30 @@
+{
+  "name": "nasdaq",
+  "version": "1.0.0",
+  "description": "Full-Stack MEAN application that is based upon the companies in the Nasdaq index",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/code-42/nasdaq.git"
+  },
+  "author": "ED",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/code-42/nasdaq/issues"
+  },
+  "homepage": "https://github.com/code-42/nasdaq#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "csvtojson": "^1.1.6",
+    "express": "^4.15.3",
+    "mongodb": "^2.2.28",
+    "mongoose": "^4.10.5"
+  },
+  "devDependencies": {
+    "mocha": "^3.4.2"
+  }
+}

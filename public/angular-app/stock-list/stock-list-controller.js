@@ -4,6 +4,9 @@ function StocksController(stockDataFactory){
     var vm = this;
     vm.title = 'NASDAQ List';
     stockDataFactory.stockList().then(function (response) {
-	 	  vm.stocks = response.data;
+      console.log("2.response == " + response);
+	 	  // vm.stocks = response.data;
+      vm.stocks = response;
+      console.log("3.vm.stocks == " + vm.stocks);
     });
 }

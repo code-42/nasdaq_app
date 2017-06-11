@@ -9,7 +9,7 @@ module.exports.stocksGetOne = function(req, res){
   Nasdaq
     .findById(id)
     .exec(function(err, doc){
-      console.log("doc == " + doc);
+      console.log("1.doc == " + doc);
       var response = {
         status : 200,
         message : doc
@@ -38,7 +38,7 @@ var getStockSymbol = function(req, res){
   Nasdaq
     .findOne({'Symbol': symbol})
     .exec(function(err, doc){
-      console.log("doc == " + doc);
+      console.log("2.doc == " + doc);
       var response = {
         status : 200,
         message : doc
@@ -65,7 +65,6 @@ module.exports.stocksGetAll = function(req, res){
   console.log('GET all the stocks');
   console.log(req.query);
 
-
   if(req.query && req.query.symbol){
     getStockSymbol(req, res);
   return;
@@ -74,7 +73,6 @@ module.exports.stocksGetAll = function(req, res){
   var offset = 0;
   var count = 3;
   var maxCount = 10;
-
 
   if (req.query && req.query.offset){
     offset = parseInt(req.query.offset, 10);
@@ -105,9 +103,10 @@ module.exports.stocksGetAll = function(req, res){
 
 	Nasdaq
 	.find()
-   .skip(offset)
-   .limit(count)
+  .skip(offset)
+  .limit(count)
 	.exec(function(err, stocks){
+    console.log("stocks == " + stocks);
 		if(err){
 			console.log("Error finding stocks");
 			res
@@ -118,6 +117,6 @@ module.exports.stocksGetAll = function(req, res){
       res
         .json(stocks);
 		}
-		console.log("found " + offset + " " + count + " stocks");
+		console.log("found offset " + offset + " : count " + count + " stocks");
 	});
 };

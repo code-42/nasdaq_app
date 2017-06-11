@@ -7,7 +7,7 @@ function stockDataFactory($http){
   };
 
   function stockList(){
-    return $http.get('/api/stocks?count=3').then(complete).catch(failed);
+    return $http.get('/api/stocks').then(complete).catch(failed);
   }
 
   function stockDisplay(id){
@@ -15,11 +15,11 @@ function stockDataFactory($http){
   }
 
   function complete(response){
-      console.log("response.data == " + response.data.name);
+      console.log("response.data.name == " + response.data);
       return response.data;
   }
 
   function failed(error){
-      console.log("error.data.name == " + error.data.name);
+      console.log("error.data == " + error.data);
   }
 }

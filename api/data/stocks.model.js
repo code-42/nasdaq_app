@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var stockSchema = new mongoose.Schema({
-	symbol : {
+	Symbol : {
 		type : String,
 		required : true
 	},

@@ -6,5 +6,6 @@ function StockController($route, $routeParams, stockDataFactory){
   vm.isSubmitted = false;
 
   stockDataFactory.stockDisplay(id).then(function (response) {
- 	  vm.stock = response;
+ 	 //  vm.stock = response.data;
+   vm.stock = response.data;
   });

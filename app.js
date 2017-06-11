@@ -1,3 +1,4 @@
+// angular.module('nasdaq', []);
 require('./api/data/db.js');
 
 var express = require('express');

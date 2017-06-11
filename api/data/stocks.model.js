@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 var stockSchema = new mongoose.Schema({
-	Symbol : {
+	symbol : {
 		type : String,
 		required : true
 	},
@@ -46,4 +46,4 @@ var stockSchema = new mongoose.Schema({
 });
 
 
-mongoose.model('NASDAQ', stockSchema, 'stocks');
+mongoose.model('Nasdaq', stockSchema, 'stocks');

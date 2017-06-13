@@ -27,10 +27,9 @@ function StockController($route, $routeParams, stockDataFactory){
       stockDataFactory.stockDisplay(stockSymbol).then(function(response){
         vm.stock = response;
         console.log("3.vm.Stock == " + vm.stock.Name);
-        // if (response.status === 200){
-          //console.log("4.inside response.status ");
+        if (response.status === 200){
           $route.reload();
-        // }
+        }
       }).catch(function(error){
         console.log(error);
       });

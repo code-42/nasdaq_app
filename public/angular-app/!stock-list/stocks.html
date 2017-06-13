@@ -1,0 +1,14 @@
+<h1>Welcome to {{ vm.title }} !</h1>
+
+<!-- <form name="vm.symbolForm" ng-submit="vm.findSymbol()">
+  Stock Symbol: <input type="text" name="symbol" requred ng-minlength="1" ng-model="vm.symbol ">
+  <div ng-show="vm.symbolForm.name.$dirty && vm.symbolForm.name.$invalid && vm.isSubmitted">
+    <p>Stock symbol should be more than 1 character long</p>
+  </div>
+  <button type="submit" class="btn">Search Stock Symbol</button>
+</form> -->
+
+<br><br>
+<ul>
+	<li ng-repeat="stock in vm.stocks"><a ng-href="#/stocks/{{ stock._id }}">{{ stock.Name }}</a></li>
+</ul>

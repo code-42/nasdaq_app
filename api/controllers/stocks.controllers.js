@@ -4,10 +4,12 @@ var Nasdaq = mongoose.model('Nasdaq');
 module.exports.stocksGetOne = function(req, res){
 
   var id = req.params.stockId;
+  // var id = req.query.symbol;
   console.log("GET stockId", id);
 
   Nasdaq
     .findById(id)
+    // .findOne({'Symbol': id})
     .exec(function(err, doc){
       console.log("1.doc == " + doc);
       var response = {
@@ -33,12 +35,13 @@ module.exports.stocksGetOne = function(req, res){
 var getStockSymbol = function(req, res){
 
   var symbol = req.query.symbol;
-  console.log("getStockSymbol", symbol);
+  console.log("1.getStockSymbol", symbol);
 
   Nasdaq
     .findOne({'Symbol': symbol})
     .exec(function(err, doc){
-      console.log("2.doc == " + doc);
+      console.log("2A.symbol == " + symbol);
+      console.log("2B.doc == " + doc);
       var response = {
         status : 200,
         message : doc
@@ -50,9 +53,11 @@ var getStockSymbol = function(req, res){
       } else if (!doc) {
         response.status = 404;
         response.message = {
-          "message" : "Stock symbol not found " + symbol
+          "message" : "Stock symbol not found "
         };
       }
+      console.log("3A.response.status == ", response.status);
+      console.log("3B.response.message == ", response.message);
       res
         .status(response.status)
         .json(response.message);
@@ -63,7 +68,7 @@ var getStockSymbol = function(req, res){
 module.exports.stocksGetAll = function(req, res){
 
   console.log('GET all the stocks');
-  console.log(req.query);
+  console.log("req.query == ", req.query);
 
   if(req.query && req.query.symbol){
     getStockSymbol(req, res);
@@ -113,7 +118,7 @@ module.exports.stocksGetAll = function(req, res){
 				.status(500)
 				.json(err);
 		} else {
-		  console.log("Found this many stocks", stocks.length);
+		  console.log("Found " + stocks.length + " stocks");
       res
         .json(stocks);
 		}

@@ -2,20 +2,16 @@ angular.module('nasdaq').factory('stockDataFactory', stockDataFactory);
 
 function stockDataFactory($http){
   return {
-    stockList: stockList,
     stockDisplay: stockDisplay
   };
 
-  function stockList(){
-    return $http.get('/api/stocks').then(complete).catch(failed);
-  }
-
-  function stockDisplay(id){
-    return $http.get('/api/stocks/' + id).then(complete).catch(failed);
+  function stockDisplay(symbol){
+    console.log("1.stockDataFactory.stockDisplay(symbol) == " + symbol);
+    return $http.get('/api/stock?symbol=' + symbol).then(complete).catch(failed);
   }
 
   function complete(response){
-      console.log("response.data.name == " + response.data);
+      console.log("2.response.data == " + response.data);
       return response.data;
   }
 

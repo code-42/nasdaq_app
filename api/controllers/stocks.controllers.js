@@ -125,3 +125,67 @@ module.exports.stocksGetAll = function(req, res){
 		console.log("found offset " + offset + " : count " + count + " stocks");
 	});
 };
+
+// var _addQuery = function(req, res){
+//   console.log("1.inside _addQuery");
+// 	Nasdaq.storeQueries.push({
+// 		symbol : req.body.symbol,
+//     Name : req.body.Name,
+// 		LastSale : parseInt(req.body.LastTradePriceOnly, 10),
+//     MarketCap : parseInt(req.body.MarketCapitalization, 10),
+// 		TimeStamp : req.body.created
+// 	});
+//
+// 	Nasdaq.save(function(err, nasdaqUpdated){
+//     console.log("2.inside nasdaq.save()");
+// 		if(err){
+// 			res
+// 				.status(500)
+// 				.json(err);
+// 		} else {
+// 			res
+//         .status(201)
+//         .json(nasdaqUpdated.storeQueries[nasdaqUpdated.storeQueries.length-1]);
+// 		}
+//     console.log("3.fin.");
+// 	});
+//
+// };
+
+module.exports.queryAddOne = function(req, res){
+  console.log("1.inside queryAddOne");
+  // _addQuery(req, res);
+  // var symbol = req.query.symbol;
+  // console.log('GET symbol', symbol);
+
+  // Nasdaq
+  //   // .findById(id)
+  //   // .findOne({'Symbol': symbol})
+  //   // .select('symbol')
+  //   .exec(function(err, doc) {
+  //     console.log("doc == " + doc);
+  //     console.log("2.inside .exec " + doc);
+  //     var response = {
+  //       status : 200,
+  //       message : []
+  //     };
+  //     if (err) {
+  //       console.log("3.Error finding symbol");
+  //       response.status = 500;
+  //       response.message = err;
+  //     } else if(!doc) {
+  //       console.log("4.symbol not found in database");
+  //       response.status = 404;
+  //       response.message = {
+  //         "message" : "symbol not found "
+  //       };
+  //     }
+  //     if (doc){
+  //       _addQuery(req, res, doc);
+  //     } else {
+	//       res
+	//         .status(response.status)
+	//         .json(response.message);
+  //     }
+  //   });
+};

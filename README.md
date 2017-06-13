@@ -23,7 +23,8 @@ D. have a sidebar that lists all previous queries by anyone, with the date and t
 E. return a news story title along with a link to that story.
 
 Ask questions here in this group.  Don't go it alone.  Team work and the willingness to interact with others is huge.  It moves us forward faster.
-Arnell • 8:37 AM
+Arnell • 8:37
+
 
 Arnell Milhouse (arnell@intracitygeeks.org)
 Once you complete the first 3 objectives.  Post a message here.  Don't go on to the bonus items until you have posted.
@@ -42,3 +43,6 @@ OK so like can a few of us work on this together and present as a group?
 Arnell Milhouse (arnell@intracitygeeks.org)
 Individual projects only, but you can ask other people questions.
 be back later.  gotta run
+
+
+API Key: J179GXRJ20IDDZD7

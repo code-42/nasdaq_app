@@ -1,18 +1,21 @@
-<h1>Welcome to {{ vm.title }}</h1>
+<h1> Welcome to {{ vm.title }}</h1>
 
 <form name="vm.stockForm" ng-submit="vm.getStock()" id="frm">
   Stock Symbol: <input type="text" name="symbol" requred ng-minlength="1" ng-model="vm.symbol" id="symbol" onkeyup="changeToUpperCase(this)">
   <button type="submit" class="btn" id="btn">Search Stock Symbol</button>
-  <div ng-show="vm.stockForm.name.$dirty && vm.stockForm.name.$invalid && vm.isSubmitted">
+  <div ng-show="vm.stockForm.name.$dirty && vm.stockForm.name.$valid && vm.isSubmitted">
     <p>Stock symbol should be more than 1 character long</p>
     <p>dynamic ng-show stuff</p>
-    <p>Stock Name: {{ vm.stock.Name }}</p>
-    <p>Stock Symbol: {{ vm.stock.Symbol }}</p>
-    <p>Last Sale: {{ vm.stock.LastSale }}</p>
+    <h3>Company Name: {{ vm.stock.query.results.quote.Name }}</h3>
+    <p>Stock Symbol: {{ vm.stock.query.results.quote.symbol }}</p>
+    <p>Last Sale: {{ vm.stock.query.results.quote.LastTradePriceOnly}}</p>
+    <p>Market Cap: {{ vm.stock.query.results.quote.MarketCapitalization}}</p>
+    <p>Time Stamp: {{ vm.stock.query.created }}</p>
   </div>
 </form>
 
-<h3>Stock Name: {{ vm.stock.Name }}</h3>
-<p>Stock Symbol: {{ vm.stock.Symbol }}</p>
-<p>Last Sale: {{ vm.stock.LastSale}}</p>
-<p>Market Cap: {{ vm.stock.MarketCap}}</p>
+<h3>Company Name: {{ vm.stock.query.results.quote.Name }}</h3>
+<p>Stock Symbol: {{ vm.stock.query.results.quote.symbol }}</p>
+<p>Last Sale: {{ vm.stock.query.results.quote.LastTradePriceOnly}}</p>
+<p>Market Cap: {{ vm.stock.query.results.quote.MarketCapitalization}}</p>
+<p>Time Stamp: {{ vm.stock.query.created }}</p>

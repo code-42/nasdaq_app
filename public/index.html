@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html ng-app="nasdaq">
 <head>
-    <base href="/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <title>NASDAQ app</title>
@@ -9,7 +8,7 @@
     <link href="css/custom.css" rel="stylesheet"/>
 </head>
 <body>
-
+    <mh-navigation></mh-navigation>
     <div ng-view></div>
 
     <footer class="footer">
@@ -27,9 +26,11 @@
     <script type="text/javascript" src="node_modules/angular/angular.js"></script><!-- version 1.6.4 -->
     <script type="text/javascript" src="node_modules/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="angular-app/app.js"></script>
-    <!-- <script type="text/javascript" src="angular-app/stock-list/stock-list-controller.js"></script> -->
     <script type="text/javascript" src="angular-app/stock-display/stock-display-controller.js"></script>
     <script type="text/javascript" src="angular-app/stock-data-factory/stock-data-factory.js"></script>
-
+    <script type="text/javascript" src="angular-app/stock-display/query-controller.js"></script>
+    <script type="text/javascript" src="angular-app/navigation-directive/navigation-directive.js"></script>
+    <!-- script type="text/javascript" src="angular-app/register/register-controller.js"></script -->
+    <script type="text/javascript" src="angular-app/login/login-controller.js"></script>
 </body>
 </html>

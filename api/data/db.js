@@ -37,4 +37,5 @@ process.once('SIGUSR2', function(){
 });
 
 // bring in schemas and models
-require('./stocks.model.js');
+require('./stocks.model');
+require('./querys.model');

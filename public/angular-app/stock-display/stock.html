@@ -1,4 +1,4 @@
-<h1> Welcome to {{ vm.title }}</h1>
+<!-- h1> Welcome to {{ vm.title }}</h1 -->
 
 <form name="vm.stockForm" ng-submit="vm.getStock()" id="frm">
   Stock Symbol: <input type="text" name="symbol" requred ng-minlength="1" ng-model="vm.symbol" id="symbol" onkeyup="changeToUpperCase(this)">
@@ -11,6 +11,7 @@
     <p>Last Sale: {{ vm.stock.query.results.quote.LastTradePriceOnly}}</p>
     <p>Market Cap: {{ vm.stock.query.results.quote.MarketCapitalization}}</p>
     <p>Time Stamp: {{ vm.stock.query.created }}</p>
+
   </div>
 </form>
 
